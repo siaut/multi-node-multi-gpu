@@ -173,3 +173,11 @@ curl https://$isvc_url/v1/completions \
 
 4. **Storage Protocol**:
    - The only supported storage protocol for `storageUri` is `PVC`.
+
+## 7. Tensor Parallelism vs Pipeline Parallelism
+
+<img src="./docs/image9.png" alt="TP vs PP" width="500">
+
+* **Tensor parallelism**: keeps the shard-to-shard traffic on the high-bandwidth links inside a single node (e.g., NVLink-connected GPUs), so slices are exchanged quickly within that box.
+
+* **Pipeline parallelism**: places different model stages on different GPUs that can live on separate nodes, letting you chain together multi-node, multi-GPU “assembly lines” for really large models.
