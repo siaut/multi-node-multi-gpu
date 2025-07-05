@@ -6,4 +6,4 @@ resources:
   - nfd-cr.yaml
   - nvidia-cp.yaml
   - rhoai-cr.yaml
-  - nfs.yaml
+  #- nfs.yaml
